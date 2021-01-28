@@ -5,8 +5,7 @@ phrase = 'purple cow'
 story = 'Purple cows are cool!'
 
 
-### where I left of:
-### lin 12 'in' doesn't work for this example
+
 
 for punc in puncs:    
     if punc in story:
@@ -16,14 +15,14 @@ spcae_char = ' '
 sp_story = story.split()
 final_story = spcae_char.join(sp_story)
 
-print(final_story)
 
 def is_phrase_in(phrase, story):
+    print(story.lower())
     if phrase in story.lower():
         return True
     return False
-#
-print(is_phrase_in('purple cow ', 'PURPLE COW'))
+
+print(is_phrase_in(phrase, story))
 
 
 
