@@ -2,7 +2,7 @@ import string
 puncs = string.punctuation
 
 phrase = 'purple cow'
-story = 'Purple cows are cool!'
+story = 'PURPLE COW'
 
 
 
@@ -13,16 +13,17 @@ for punc in puncs:
 
 spcae_char = ' '        
 sp_story = story.split()
-final_story = spcae_char.join(sp_story)
+final_story = spcae_char.join(sp_story) + ' '
+#print('Final Story: ', final_story)
 
 
 def is_phrase_in(phrase, story):
     print(story.lower())
-    if phrase in story.lower():
+    if (phrase + ' ') in story.lower():
         return True
     return False
 
-print(is_phrase_in(phrase, story))
+print(is_phrase_in(phrase, final_story))
 
 
 

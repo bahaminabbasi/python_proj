@@ -93,7 +93,7 @@ class Trigger(object):
         raise NotImplementedError
 
 # PHRASE TRIGGERS
-
+puncs = string.punctuation
 # Problem 2
 # TODO: PhraseTrigger
 class PhraseTrigger(Trigger):
@@ -101,11 +101,24 @@ class PhraseTrigger(Trigger):
         Trigger.__init__(self, story)
         self.phrase = phrase.lower()
         
+    # logic works outside this method, problem is in self.story
+    # self if is a NewStory doesn't have story!
     def is_phrase_in(self, phrase):
-        
+        for punc in puncs:    
+            if punc in self.story:
+                new_story = self.story.replace(punc, ' ')
+        spcae_char = ' '        
+        sp_story = new_story.split()
+        final_story = spcae_char.join(sp_story) + ' '
+        if (phrase + ' ') in final_story.lower():
+            return True
+        return False
 
 # Problem 3
 # TODO: TitleTrigger
+
+#class TitleTrigger(PhraseTrigger):
+    
 
 # Problem 4
 # TODO: DescriptionTrigger
